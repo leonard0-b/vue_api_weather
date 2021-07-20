@@ -66,7 +66,7 @@ section {
 .search > i {
     padding: 15px 15px;
     border-radius: 0 10px 10px 0;
-
+    position: relative;
 }
 
 .layer {
@@ -78,7 +78,14 @@ section {
     z-index: 2;
     background-color: red;
 }
+.error {
+    position: absolute;
 
+    color: red;
+    text-transform: uppercase;
+    z-index: 1000;
+
+}
 .container {
     z-index: 3;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);    
