@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Now</title>
+</head>
+<body>
+    <div id="root">
+        <section class="flex">
+            <div class="homepage flex" v-if="show">
+                <div class="home-search flex">
+                    <input type="text" v-model="cerca" placeholder="Inserisci una città..." @keyup.enter="getMeteo">
+                    <i class="fas fa-search" @click="getMeteo"></i>
+                </div>
+            </div>
+            <div class="layer" v-for="weather in weathers" :class="'w' + weather.id">
+            </div>
+            <div class="container flex" v-if="!show">
+                <div class="search flex">
+                    <input type="text" v-model="cerca" placeholder="Inserisci una città..." @keyup.enter="getMeteo">
+                    <i class="fas fa-search"  @click="getMeteo"></i>
+                </div>
+                <div class="erorr" v-if="!error">
+                    NESSUNA CITTA'
+                </div>
+                <div class="content" v-if="error">
+                    <div class="city-temp flex" v-for="weather in weathers" :class="'x' + weather.id">
+                        <p>{{Math.round(mains.temp)}}</p>
+                        <p v-if="weather.id"> °</p>
+                    </div>    
+                    <div class="img" v-for="weather in weathers">
+                        <img v-if="weather.id === 800"src="./assets/img/sunny.png" alt="sunny">
+                        <img v-if="weather.id >= 200 && 300 > weather.id" src="./assets/img/thunderstorm.png" alt="thunderstorm">
+                        <img v-if="weather.id >= 300 && 500 > weather.id" src="./assets/img/drizzle.png" alt="drizzle">
+                        <img v-if="weather.id >= 500 && 600 > weather.id" src="./assets/img/rain.png" alt="rain">
+                        <img v-if="weather.id >= 600 && 700 > weather.id" src="./assets/img/snowflakes.png" alt="snow">
+                        <img v-if="weather.id >= 700 && 800 > weather.id" src="./assets/img/fog.png" alt="fog">
+                        <img v-if="weather.id > 800" src="./assets/img/cloudy.png" alt="cloudy">
+                    </div>
+                    <div class="bottom flex">
+                        <div class="city-name" v-for="weather in weathers" :class="'x' + weather.id">
+                            <h1>{{cities.name}}</h1>
+                        </div>
+                        <div class="weather" v-for="weather in weathers" :class="'x' + weather.id">
+                            <p v-if="weather.id === 800">Soleggiato</p>
+                            <p v-if="weather.id >= 200 && 300 > weather.id">Temporali</p>
+                            <p v-if="weather.id >= 300 && 500 > weather.id">Lievi Piogge</p>
+                            <p v-if="weather.id >= 500 && 600 > weather.id">Pioggia</p>
+                            <p v-if="weather.id >= 600 && 700 > weather.id">Neve</p>
+                            <p v-if="weather.id >= 700 && 800 > weather.id">Foschia</p>
+                            <p v-if="weather.id > 800">Nuvoloso</p>
+                        </div>    
+                    </div>    
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+    </div>
+    
+    <!-- script di vue -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="./assets/js/main.js" charset="utf-8"></script> 
+</body>
+</html>
