@@ -16,11 +16,10 @@ var app = new Vue(
             errorMsg: ''
         },
         methods: {
-            getMeteo: async function () {
-
+            getMeteo: function () {
                 let msgErrore = $(".error");
                 msgErrore.empty()  // svuoto il div con classe errore prima di ogni chiamata
-                await axios.get(`${this.uri}/weather?units=${this.celsius}&q=${this.cerca}&appid=${this.api_key}`)
+                axios.get(`${this.uri}/weather?units=${this.celsius}&q=${this.cerca}&appid=${this.api_key}`)
                     .then((response) => {
                         if (response.data.cod === 200) {
                             $('.content').css('display', 'block');
@@ -36,27 +35,20 @@ var app = new Vue(
                         }
                     })
                     .catch(function (error) { //intercetto tutti gli errori dalla chiamata
-
                         if (error.response.data.cod == 404) { //se esiste un errore
-
-
                             let msgErrore = $(".error");
-                            msgErrore.html(`<img src="./assets/img/negative.png" alt="error"><p>Nessuna città trovata</p>`); //scrivo l'errore dentro il div con classe .error
+                            msgErrore.html(`<img src="./assets/img/warning.png" alt="error"><p>Nessuna città trovata</p>`); //scrivo l'errore dentro il div con classe .error
                             $('.content').css('display', 'none');
                             $('input').val('');
 
                         } else if (error.response.data.cod == 400) {
                             let msgErrore = $(".error");
-
-
-                            msgErrore.html(`<img src="./assets/img/negative.png" alt="error"><p>Nessuna città inserita</p>`); //scrivo l'errore dentro il div con classe .error
+                            msgErrore.html(`<img src="./assets/img/warning.png" alt="error"><p>Nessuna città inserita</p>`); //scrivo l'errore dentro il div con classe .error
                             $('.content').css('display', 'none');
                             $('input').val('');
-
-
                         }
                     })
                 this.cerca ='';
             },
-        }
+        } 
     });

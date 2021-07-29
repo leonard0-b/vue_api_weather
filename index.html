@@ -19,11 +19,10 @@
             <div class="home-search flex">
                 <input type="text" v-model="cerca" placeholder="Inserisci una città..." @keyup.enter="getMeteo">
                 <i class="fas fa-search" @click="getMeteo"></i>
-                <div class="error">
-
-                </div>
             </div>
+            <div class="error flex">
 
+            </div>
         </div>
 
         <div class="layer" v-for="weather in weathers" :class="'w' + weather.id">
@@ -33,11 +32,10 @@
             <div class="search flex">
                 <input type="text" v-model="cerca" placeholder="Inserisci una città..." @keyup.enter="getMeteo">
                 <i class="fas fa-search" @click="getMeteo"></i>
-                <div class="error">
-
-                </div>
             </div>
+            <div class="error flex app">
 
+            </div>
             <div class="content" v-if="error">
                 <div class="city-temp flex" v-for="weather in weathers" :class="'x' + weather.id">
                     <p>{{Math.round(mains.temp)}}</p>
