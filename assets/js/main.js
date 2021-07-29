@@ -36,29 +36,27 @@ var app = new Vue(
                         }
                     })
                     .catch(function (error) { //intercetto tutti gli errori dalla chiamata
+
                         if (error.response.data.cod == 404) { //se esiste un errore
-                            console.log(error.response.data) //log
+
+
                             let msgErrore = $(".error");
-                            msgErrore.append(`<img src="./assets/img/negative.png" alt="error"><p>Nessuna città trovata</p>`); //scrivo l'errore dentro il div con classe .error
+                            msgErrore.html(`<img src="./assets/img/negative.png" alt="error"><p>Nessuna città trovata</p>`); //scrivo l'errore dentro il div con classe .error
                             $('.content').css('display', 'none');
                             $('input').val('');
-                            console.log('if');
 
+                        } else if (error.response.data.cod == 400) {
+                            let msgErrore = $(".error");
+
+
+                            msgErrore.html(`<img src="./assets/img/negative.png" alt="error"><p>Nessuna città inserita</p>`); //scrivo l'errore dentro il div con classe .error
+                            $('.content').css('display', 'none');
+                            $('input').val('');
 
 
                         }
-                        else if (error.response.data.cod == 400) {
-                            let msgErrore = $(".error");
-                            msgErrore.append(`<img src="./assets/img/negative.png" alt="error"><p>Nessuna città inserita</p>`); //scrivo l'errore dentro il div con classe .error
-                            $('.content').css('display', 'none');
-                            $('input').val('');
-                            console.log('elsino');
-
-
-
-                        } else {
-                            console.log('CIAO');
-                        }
-                    })            },
+                    })
+                this.cerca ='';
+            },
         }
     });
