@@ -227,3 +227,169 @@ img {
 /* /font */
 
 
+@media all and (max-width: 1024px) {
+    .container {
+        width: 80%;
+        height: fit-content;
+    }
+
+    section {
+        align-items: center;
+    }
+
+    .home-search > input {
+        width: 650px;
+    }
+
+    .img > img {
+        width: 350px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .home-search > input {
+        width: 450px;
+    }
+
+    .city-temp > p {
+        font-size: 180px;
+    }
+
+}
+
+@media all and (max-width: 576px) {
+    .home-search > input {
+        width: auto;
+    }
+
+    .city-temp > p {
+        font-size: 85px;
+    }
+
+    .search > input {
+        font-size: 8px;
+        width: 100px;
+        height: 25px;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .search {
+        border-radius: 5px;
+        width: 125px;
+        height: 25px;
+        align-items: center;
+    }
+
+    .search > i {
+        font-size: 8px;
+        padding: 9px;
+        border-radius: 0 5px 5px 0;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .weather > p {
+        font-size: 15px;
+    }
+
+    .img {
+        right: -28px;
+    }
+
+    .img > img {
+        width: 130px;
+    }
+
+    .city-name {
+        width: 50%;
+    }
+}
+
+@media all and (max-width: 540px) {
+    .city-temp > p {
+        font-size: 120px;
+    }
+
+    .search > input {
+        font-size: 8px;
+        width: 100px;
+        height: 25px;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .search {
+        border-radius: 5px;
+        width: 125px;
+        height: 25px;
+        align-items: center;
+    }
+
+    .search > i {
+        font-size: 8px;
+        padding: 9px;
+        border-radius: 0 5px 5px 0;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .weather > p {
+        font-size: 25px;
+    }
+
+    .img {
+        right: -28px;
+    }
+
+    .img > img {
+        width: 180px;
+    }
+
+    .city-name {
+        width: 50%;
+    }
+}
+
+@media all and (max-width: 411px) {
+    .city-temp > p {
+        font-size: 85px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .weather > p {
+        font-size: 20px;
+    }
+
+    .img > img {
+        width: 150px;
+    }
+}
+
+@media all and (max-width: 350px) {
+    .city-temp > p {
+        font-size: 65px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .weather > p {
+        font-size: 20px;
+    }
+
+    .img > img {
+        width: 110px;
+    }
+
+    .city-name {
+        width: 40%;
+    }
+}
+
