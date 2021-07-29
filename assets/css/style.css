@@ -81,7 +81,7 @@ section {
 }
 .error {
     position: absolute;
-
+    top:100px;
     color: red;
     text-transform: uppercase;
     z-index: 1000;

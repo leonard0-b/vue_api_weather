@@ -17,11 +17,13 @@ var app = new Vue(
         },
         methods: {
             getMeteo: async function () {
+
                 let msgErrore = $(".error");
                 msgErrore.empty()  // svuoto il div con classe errore prima di ogni chiamata
                 await axios.get(`${this.uri}/weather?units=${this.celsius}&q=${this.cerca}&appid=${this.api_key}`)
                     .then((response) => {
                         if (response.data.cod === 200) {
+                            $('.content').css('display', 'block');
                             this.cities = response.data;
                             this.mains = response.data.main;
                             this.weathers = response.data.weather;
@@ -41,6 +43,9 @@ var app = new Vue(
                             $('.content').css('display', 'none');
                             $('input').val('');
                             console.log('if');
+
+
+
                         }
                         else if (error.response.data.cod == 400) {
                             let msgErrore = $(".error");
@@ -48,6 +53,9 @@ var app = new Vue(
                             $('.content').css('display', 'none');
                             $('input').val('');
                             console.log('elsino');
+
+
+
                         } else {
                             console.log('CIAO');
                         }
