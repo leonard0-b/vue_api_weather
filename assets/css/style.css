@@ -17,6 +17,22 @@ section {
     background-color: rgb(230, 230, 230);
 }
 
+.title {
+    align-items: center;
+    margin-bottom: 50px;
+    color: #464f80;
+}
+
+.title > h1 {
+    align-items: center;
+    margin-right: 15px;
+}
+
+.title > img {
+    width: 100px;
+    border-radius: 10px;
+}
+
 .img-intro {
     margin-top: 50px;
     justify-content: center;
@@ -138,6 +154,9 @@ section {
     justify-content: space-between;
 }
 
+.weather {
+    align-self: flex-end;
+}
 
 .weather > p {
     font-size: 35px;
@@ -244,6 +263,24 @@ img {
     .img > img {
         width: 350px;
     }
+
+    .app {
+        position: initial;
+    }
+
+    .error > p {
+        font-size: 40px;
+        margin-left: 30px;
+    }
+
+    .homepage > .error > img {
+        width: 110px;
+    }
+
+    .title > img {
+        width: 120px;
+        border-radius: 10px;
+    }
 }
 
 @media all and (max-width: 768px) {
@@ -255,6 +292,19 @@ img {
         font-size: 180px;
     }
 
+    .homepage > .error > img {
+        width: 80px;
+    }
+
+    .error > p {
+        font-size: 28px;
+        margin-left: 30px;
+    }
+
+    .title > img {
+        width: 100px;
+        border-radius: 10px;
+    }
 }
 
 @media all and (max-width: 576px) {
@@ -305,6 +355,19 @@ img {
     .city-name {
         width: 50%;
     }
+
+    .homepage > .error > img {
+        width: 50px;
+    }
+
+    .error > p {
+        font-size: 15px;
+        margin-left: 5px;
+    }
+
+    .app > img {
+        width: 50px;
+    }
 }
 
 @media all and (max-width: 540px) {
@@ -351,9 +414,19 @@ img {
     .city-name {
         width: 50%;
     }
+
+    .title > img {
+        width: 80px;
+        border-radius: 10px;
+    }
 }
 
-@media all and (max-width: 411px) {
+@media all and (max-width: 414px) {
+    .title > img {
+        width: 50px;
+        border-radius: 10px;
+    }
+
     .city-temp > p {
         font-size: 85px;
     }
@@ -368,6 +441,11 @@ img {
 
     .img > img {
         width: 150px;
+    }
+
+    .error > p {
+        font-size: 12px;
+        margin-left: 3px;
     }
 }
 
@@ -390,6 +468,11 @@ img {
 
     .city-name {
         width: 40%;
+    }
+
+    .error > p {
+        font-size: 8px;
+        margin-left: 3px;
     }
 }
 

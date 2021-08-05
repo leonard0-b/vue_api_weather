@@ -16,6 +16,10 @@
     <section class="flex">
 
         <div class="homepage flex" v-if="show">
+            <div class="title flex">
+                <h1>Weather Now</h1>
+                <img src="./assets/img/weather-forecast.png" alt="weather-forecast">
+            </div>
             <div class="home-search flex">
                 <input type="text" v-model="cerca" placeholder="Inserisci una città..." @keyup.enter="getMeteo">
                 <i class="fas fa-search" @click="getMeteo"></i>
@@ -54,6 +58,7 @@
                 <div class="bottom flex">
                     <div class="city-name" v-for="weather in weathers" :class="'x' + weather.id">
                         <h1>{{cities.name}}</h1>
+                        <h1>{{(countries.country)}}</h1>
                     </div>
                     <div class="weather" v-for="weather in weathers" :class="'x' + weather.id">
                         <p v-if="weather.id === 800">Soleggiato</p>

@@ -13,6 +13,7 @@ var app = new Vue(
             cities: [],
             mains: [],
             weathers: [],
+            countries: [],
             errorMsg: ''
         },
         methods: {
@@ -26,12 +27,17 @@ var app = new Vue(
                             this.cities = response.data;
                             this.mains = response.data.main;
                             this.weathers = response.data.weather;
-                            /*console.log(response);
-                            console.log('main', this.mains);
+                            this.countries = response.data.sys;
+                            console.log(this.countries);
+                            console.log(response);
+                            /*console.log('main', this.mains);
                             console.log('tempo', this.weathers);
                             console.log('città', this.cities);*/
                             this.cerca = "";
                             this.show = false;
+                        } 
+                        if (this.weathers != [1]) {
+                            this.weathers.splice(1, 2);
                         }
                     })
                     .catch(function (error) { //intercetto tutti gli errori dalla chiamata
