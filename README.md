@@ -5,12 +5,12 @@ Sono visualizzati temperatura, nome città, nome stato e tempo atmosferico, camb
 
 L'app è responsive per monitor, tablet e smartphone.
 
-![] (1.jpg)
+![](1.jpg)
 
-![] (2.jpg)
+![](2.jpg)
 
-![] (3.jpg)
+![](3.jpg)
 
-![] (4.jpg)
+![](4.jpg)
 
-![] (5.jpg)
+![](5.jpg)
