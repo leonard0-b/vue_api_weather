@@ -36,7 +36,7 @@ var app = new Vue(
                             this.cerca = "";
                             this.show = false;
                         } 
-                        if (this.weathers != [1]) {
+                        if (this.weathers != [1]) { //se l'API risponde con due risultati prendo solo il primo
                             this.weathers.splice(1, 2);
                         }
                     })
